@@ -2,10 +2,18 @@
   <div class="flex flex-1 gap-3 items-center">
     <lucide-icon [img]="SearchIcon" class="text-gray-400"></lucide-icon>
     <input
+      #searchInput
+      [(ngModel)]="_inputValue"
       type="text"
       placeholder="Start searching..."
       class="w-full bg-transparent placeholder:text-gray-400 text-gray-900 outline-none"
+      (keyup.enter)="search()"
     />
   </div>
-  <a href="#" class="underline underline-offset-2 text-sm font-medium"> Clear </a>
+  <button
+    (click)="clearSearchInput()"
+    class="underline underline-offset-2 text-sm font-medium"
+  >
+    Clear
+  </button>
 </div>
