@@ -21,6 +21,7 @@ export class SearchBoxComponent {
   }
 
   public search(): void {
+    // TODO: Implement search logic
     console.log('search:', this._inputValue);
   }
 }
