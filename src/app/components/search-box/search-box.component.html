@@ -1,12 +1,12 @@
 <div class="flex justify-between gap-2 items-center">
   <div class="flex flex-1 gap-3 items-center">
-    <lucide-icon [img]="SearchIcon" class="text-gray-400"></lucide-icon>
+    <lucide-icon [img]="SearchIcon" class="size-6 text-gray-400"></lucide-icon>
     <input
       #searchInput
       [(ngModel)]="_inputValue"
       type="text"
       placeholder="Start searching..."
-      class="w-full bg-transparent placeholder:text-gray-400 text-gray-900 outline-none"
+      class="text-base w-full bg-transparent placeholder:text-gray-400 text-gray-900 outline-none"
       (keyup.enter)="search()"
     />
   </div>
