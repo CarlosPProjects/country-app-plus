@@ -1,1 +1,10 @@
-<p>country-page works!</p>
+
+
+<hr class="border-gray-200" />
+@if (country) {
+<div>
+  {{ country.name.common }}
+</div>
+}@else {
+<div>Loading...</div>
+}
