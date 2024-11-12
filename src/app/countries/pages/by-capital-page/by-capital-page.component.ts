@@ -8,5 +8,4 @@ import { TableComponent } from '../../components/table/table.component';
   templateUrl: './by-capital-page.component.html',
 })
 export class ByCapitalPageComponent {
-
 }

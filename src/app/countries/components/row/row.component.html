@@ -2,12 +2,19 @@
   class="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer hover:bg-gray-200/50 transition-all duration-300"
 >
   <div class="rounded-lg bg-gray-200 p-2">
-    <lucide-icon [img]="imageIcon" class="size-5 text-gray-700"></lucide-icon>
+    <!-- <lucide-icon [img]="imageIcon" class="size-5 text-gray-700"></lucide-icon> -->
+    <img
+      [src]="country.flags.png"
+      alt="Flag of {{ country.name.common }}"
+      class="size-5 object-cover"
+    />
   </div>
   <div class="flex-1 flex items-center justify-between">
     <div class="flex flex-col gap-1 text-sm">
-      <span class="font-medium">Lima, Perú</span>
-      <span class="text-gray-400">2,100,50</span>
+      <span class="font-medium max-sm:max-w-[160px] truncate"
+        >{{ country.capital }}, {{ country.name.common }}</span
+      >
+      <span class="text-gray-400">{{ country.population | number }}</span>
     </div>
     <button class="w-fit __tool-tip" data-tooltip="View More">
       <lucide-icon [img]="infoIcon" class="size-4"></lucide-icon>

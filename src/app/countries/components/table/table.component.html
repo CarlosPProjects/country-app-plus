@@ -1,19 +1,23 @@
-<div class="flex flex-col gap-2 max-h-96">
-  @if(loading){
-    <!-- TODO: Customize table -->
-    <app-row-skeleton></app-row-skeleton>
-    <hr class="border-gray-200" />
-    <app-row></app-row>
-    <hr class="border-gray-200" />
-  } @else {
-    <div
-      class="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-200/50"
-    >
-      <lucide-icon
-        [img]="shielQuestionIcon"
-        class="size-6 text-gray-400"
-      ></lucide-icon>
-      <span class="text-gray-400">No data found</span>
-    </div>
+<div class="flex flex-col gap-2">
+  @if (loading) {
+  <app-row-skeleton></app-row-skeleton>
+  <hr class="border-gray-200" />
+  <app-row-skeleton></app-row-skeleton>
+  <hr class="border-gray-200" />
+  <app-row-skeleton></app-row-skeleton>
+  } @else if (countries.length > 0) { @for (country of countries; track
+  country.name.common) {
+  <app-row [country]="country"></app-row>
+  <hr class="border-gray-200" />
+  } } @else {
+  <div
+    class="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-200/50"
+  >
+    <lucide-icon
+      [img]="shieldQuestionIcon"
+      class="size-6 text-gray-400"
+    ></lucide-icon>
+    <span class="text-gray-400">No data found</span>
+  </div>
   }
 </div>

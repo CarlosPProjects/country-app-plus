@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, Search } from 'lucide-angular';
+import { SearchService } from '../services/search-box.service';
 
 @Component({
   selector: 'app-search-box',
@@ -14,14 +15,16 @@ export class SearchBoxComponent {
 
   public _inputValue: string = '';
 
-  constructor() {}
+  @Output() onValue: EventEmitter<string> = new EventEmitter<string>();
 
-  public clearSearchInput() {
+  constructor(private searchService: SearchService) {}
+
+  clearSearchInput() {
     this._inputValue = '';
+    this.searchService.setSearchValue('');
   }
 
-  public search(): void {
-    // TODO: Implement search logic
-    console.log('search:', this._inputValue);
+  search(value: string) {
+    this.searchService.setSearchValue(value);
   }
 }
