@@ -6,16 +6,15 @@ import {
   ShieldQuestion,
 } from 'lucide-angular';
 import { RowSkeletonComponent } from '../row-skeleton/row-skeleton.component';
+import { RowComponent } from '../row/row.component';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [LucideAngularModule, RowSkeletonComponent],
+  imports: [LucideAngularModule, RowSkeletonComponent, RowComponent],
   templateUrl: './table.component.html',
 })
 export class TableComponent {
-  readonly imageIcon = Image;
-  readonly infoIcon = Info;
   readonly shielQuestionIcon = ShieldQuestion;
 
   @Input() data: any[] = [];
