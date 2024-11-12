@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {
   LucideAngularModule,
-  Image,
-  Info,
   ShieldQuestion,
 } from 'lucide-angular';
 import { RowSkeletonComponent } from '../row-skeleton/row-skeleton.component';
