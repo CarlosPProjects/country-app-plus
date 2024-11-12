@@ -5,6 +5,7 @@ import { Country } from '../../interfaces/country';
 import { Subscription, switchMap } from 'rxjs';
 import { LucideAngularModule, ChevronLeft, UsersRound } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
+import { SearchService } from '../../../components/services/search-box.service';
 
 @Component({
   selector: 'app-country-page',
@@ -23,7 +24,8 @@ export class CountryPageComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private countriesService: CountriesService
+    private countriesService: CountriesService,
+    private searchService: SearchService
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class CountryPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.subscription) {
+      this.searchService.setSearchValue('');
       this.subscription.unsubscribe();
     }
   }
