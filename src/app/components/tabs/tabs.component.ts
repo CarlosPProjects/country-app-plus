@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Country } from '../../countries/interfaces/country';
+import { SearchService } from '../services/search-box.service';
 
 @Component({
   selector: 'app-tabs',
@@ -8,4 +10,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './tabs.component.html',
   styles: '',
 })
-export class TabsComponent {}
+export class TabsComponent {
+  private countries: Country[] = [];
+
+  constructor(private searchService: SearchService) {}
+}
